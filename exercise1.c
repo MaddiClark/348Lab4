@@ -22,7 +22,7 @@ TD1ptF(int score){
 
 TDF(int score){
     int output = score/6;
-    printf("%d TD, ");
+    printf("%d TD, ", output);
     return output;
 }
 
