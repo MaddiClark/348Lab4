@@ -10,19 +10,19 @@ Description: Takes in two football scores and outputs all possible scoring combi
 ScoreCheck(score){
     if (score > 1) {
         if (score % 8 == 0){
-           TD2ptF(); 
+           TD2ptF(score); 
         }
         if (score % 7 == 0){
-            TD1ptF();
+            TD1ptF(score);
         }
         if (score % 6 == 0 ){
-            TDF();
+            TDF(score);
         }
         if (score % 3 == 0){
-            FGF();
+            FGF(score);
         }
         if (score % 2 == 0){
-            SafetyF();
+            SafetyF(score);
         }
     }
     printf("\n");
@@ -64,4 +64,5 @@ void main(){
     printf("Enter 0 or 1 to STOP\n");
     printf("Enter the NFL score: ");
     scanf("%d", score);
+    ScoreCheck(score);
 }
