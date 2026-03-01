@@ -1,2 +1,66 @@
-/* This is exercise 1 */
+/*
+Name: Maddi Clark
+KUID: 3162616
+Date: 3/1/2026
+Description: Takes in two football scores and outputs all possible scoring combinations
+*/
 
+#include <stdio.h>
+
+int main(){
+    int score;
+    int TD2pt;
+    printf("Enter 0 or 1 to STOP\n");
+    printf("Enter the NFL score: ");
+    scanf("%d", score);
+}
+
+void ScoreCheck(score){
+    if (score > 1) {
+        if (score % 8 == 0){
+           TD2ptF(); 
+        }
+        if (score % 7 == 0){
+            TD1ptF();
+        }
+        if (score % 6 == 0 ){
+            TDF();
+        }
+        if (score % 3 == 0){
+            FGF();
+        }
+        if (score % 2 == 0){
+            SafetyF();
+        }
+    }
+    printf("\n");
+}
+
+void TD2ptF(score){
+    int output = score/8;
+    printf("%d TD + 2pt, ", output);
+    ScoreCheck(output);
+}
+
+void TD1ptF(score){
+    int output = score/7;
+    printf("%d TD + 1pt, ", output);
+    ScoreCheck(output);
+}
+
+void TDF(score){
+    int output = score/6;
+    printf("%d TD, ");
+    ScoreCheck(output);
+}
+
+void FGF(score){
+    int output = score/3;
+    printf("%d 3pt FG, ", output);
+    scoreCheck(output);
+}
+
+void SafetyF(score){
+    int output = score/2;
+    printf("%d Safety", output);
+}
