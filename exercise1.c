@@ -39,26 +39,27 @@ int SafetyF(int score){
 }
 
 void ScoreCheck(int score){
+    int new_score = score;
     if (score > 1) {
         if (score % 8 == 0){
-           int output=TD2ptF(score);
-           ScoreCheck(output); 
+           new_score = TD2ptF(score);
+           ScoreCheck(new_score-8); 
         }
         if (score % 7 == 0){
-            int output=TD1ptF(score);
-            ScoreCheck(output);
+            new_score = TD1ptF(score);
+            ScoreCheck(new_score - 7);
         }
         if (score % 6 == 0 ){
-            int output=TDF(score);
-            ScoreCheck(output);
+            new_score = TDF(score);
+            ScoreCheck(new_score - 6);
         }
         if (score % 3 == 0){
-            int output=FGF(score);
-            ScoreCheck(output);
+            new_score = FGF(score);
+            ScoreCheck(new_score - 3);
         }
         if (score % 2 == 0){
-            int output=SafetyF(score);
-            ScoreCheck(output);
+            new_score = SafetyF(score);
+            ScoreCheck(new_score - 2);
         }
     }
     printf("\n");
