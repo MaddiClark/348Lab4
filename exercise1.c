@@ -7,26 +7,6 @@ Description: Takes in two football scores and outputs all possible scoring combi
 
 #include <stdio.h>
 
-void ScoreCheck(int score){
-    if (score > 1) {
-        if (score % 8 == 0){
-           TD2ptF(score); 
-        }
-        if (score % 7 == 0){
-            TD1ptF(score);
-        }
-        if (score % 6 == 0 ){
-            TDF(score);
-        }
-        if (score % 3 == 0){
-            FGF(score);
-        }
-        if (score % 2 == 0){
-            SafetyF(score);
-        }
-    }
-    printf("\n");
-}
 
 void TD2ptF(int score){
     int output = score/8;
@@ -59,6 +39,27 @@ void FGF(int score){
 void SafetyF(int score){
     int output = score/2;
     printf("%d Safety", output);
+}
+
+void ScoreCheck(int score){
+    if (score > 1) {
+        if (score % 8 == 0){
+           TD2ptF(score); 
+        }
+        if (score % 7 == 0){
+            TD1ptF(score);
+        }
+        if (score % 6 == 0 ){
+            TDF(score);
+        }
+        if (score % 3 == 0){
+            FGF(score);
+        }
+        if (score % 2 == 0){
+            SafetyF(score);
+        }
+    }
+    printf("\n");
 }
 
 main(){
