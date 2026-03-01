@@ -8,7 +8,7 @@ Description: Takes in two football scores and outputs all possible scoring combi
 #include <stdio.h>
 
 void main(){
-    int score;
+    int* score;
     int TD2pt;
     printf("Enter 0 or 1 to STOP\n");
     printf("Enter the NFL score: ");
