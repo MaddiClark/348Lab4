@@ -7,7 +7,7 @@ Description: Takes in two football scores and outputs all possible scoring combi
 
 #include <stdio.h>
 
-int main(){
+void main(){
     int score;
     int TD2pt;
     printf("Enter 0 or 1 to STOP\n");
@@ -15,7 +15,7 @@ int main(){
     scanf("%d", score);
 }
 
-void ScoreCheck(score){
+ScoreCheck(score){
     if (score > 1) {
         if (score % 8 == 0){
            TD2ptF(); 
@@ -36,31 +36,31 @@ void ScoreCheck(score){
     printf("\n");
 }
 
-void TD2ptF(score){
+TD2ptF(score){
     int output = score/8;
     printf("%d TD + 2pt, ", output);
     ScoreCheck(output);
 }
 
-void TD1ptF(score){
+TD1ptF(score){
     int output = score/7;
     printf("%d TD + 1pt, ", output);
     ScoreCheck(output);
 }
 
-void TDF(score){
+TDF(score){
     int output = score/6;
     printf("%d TD, ");
     ScoreCheck(output);
 }
 
-void FGF(score){
+FGF(score){
     int output = score/3;
     printf("%d 3pt FG, ", output);
     ScoreCheck(output);
 }
 
-void SafetyF(score){
+SafetyF(score){
     int output = score/2;
     printf("%d Safety", output);
 }
