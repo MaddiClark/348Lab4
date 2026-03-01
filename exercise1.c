@@ -32,29 +32,34 @@ TD2ptF(score){
     int output = score/8;
     printf("%d TD + 2pt, ", output);
     ScoreCheck(output);
+    return;
 }
 
 TD1ptF(score){
     int output = score/7;
     printf("%d TD + 1pt, ", output);
     ScoreCheck(output);
+    return;
 }
 
 TDF(score){
     int output = score/6;
     printf("%d TD, ");
     ScoreCheck(output);
+    return;
 }
 
 FGF(score){
     int output = score/3;
     printf("%d 3pt FG, ", output);
     ScoreCheck(output);
+    return;
 }
 
 SafetyF(score){
     int output = score/2;
     printf("%d Safety", output);
+    return;
     
 }
 
@@ -65,4 +70,5 @@ void main(){
     printf("Enter the NFL score: ");
     scanf("%d", score);
     ScoreCheck(score);
+    return 0;
 }
