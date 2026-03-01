@@ -8,66 +8,68 @@ Description: Takes in two football scores and outputs all possible scoring combi
 #include <stdio.h>
 
 
-void TD2ptF(int score){
+TD2ptF(int score){
     int output = score/8;
     printf("%d TD + 2pt, ", output);
-    ScoreCheck(output);
-    return;
+    return output;
 }
 
-void TD1ptF(int score){
+TD1ptF(int score){
     int output = score/7;
     printf("%d TD + 1pt, ", output);
-    ScoreCheck(output);
-    return;
+    return output;
 }
 
-void TDF(int score){
+TDF(int score){
     int output = score/6;
     printf("%d TD, ");
-    ScoreCheck(output);
-    return;
+    return output;
 }
 
-void FGF(int score){
+FGF(int score){
     int output = score/3;
     printf("%d 3pt FG, ", output);
-    ScoreCheck(output);
-    return;
+    return output;
 }
 
-void SafetyF(int score){
+SafetyF(int score){
     int output = score/2;
-    printf("%d Safety", output);
+    printf("%d Safety", output); 
+    return output;
 }
 
-void ScoreCheck(int score){
+ScoreCheck(int score){
     if (score > 1) {
         if (score % 8 == 0){
-           TD2ptF(score); 
+           int output=TD2ptF(score);
+           ScoreCheck(output); 
         }
         if (score % 7 == 0){
-            TD1ptF(score);
+            int output=TD1ptF(score);
+            ScoreCheck(output);
         }
         if (score % 6 == 0 ){
-            TDF(score);
+            int output=TDF(score);
+            ScoreCheck(output);
         }
         if (score % 3 == 0){
-            FGF(score);
+            int output=FGF(score);
+            ScoreCheck(output);
         }
         if (score % 2 == 0){
-            SafetyF(score);
+            int output=SafetyF(score);
+            ScoreCheck(output);
         }
     }
     printf("\n");
 }
 
 main(){
-    int score;
-    int TD2pt;
-    printf("Enter 0 or 1 to STOP\n");
-    printf("Enter the NFL score: ");
-    scanf("%d", score);
-    ScoreCheck(score);
-    return 0;
+    int score = 2;
+    while (score > 1){
+        printf("Enter 0 or 1 to STOP\n");
+        printf("Enter the NFL score: ");
+        scanf("%d", score);
+        ScoreCheck(score);
+    }
 }
