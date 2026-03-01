@@ -69,7 +69,7 @@ void main(){
     while (score > 1){
         printf("Enter 0 or 1 to STOP\n");
         printf("Enter the NFL score: ");
-        scanf("%d", score);
+        scanf("%d", &score);
         ScoreCheck(score);
     }
 }
