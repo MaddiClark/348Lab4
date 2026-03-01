@@ -7,14 +7,6 @@ Description: Takes in two football scores and outputs all possible scoring combi
 
 #include <stdio.h>
 
-void main(){
-    int * score;
-    int TD2pt;
-    printf("Enter 0 or 1 to STOP\n");
-    printf("Enter the NFL score: ");
-    scanf("%d", score);
-}
-
 ScoreCheck(score){
     if (score > 1) {
         if (score % 8 == 0){
@@ -63,4 +55,13 @@ FGF(score){
 SafetyF(score){
     int output = score/2;
     printf("%d Safety", output);
+    
+}
+
+void main(){
+    int * score;
+    int TD2pt;
+    printf("Enter 0 or 1 to STOP\n");
+    printf("Enter the NFL score: ");
+    scanf("%d", score);
 }
