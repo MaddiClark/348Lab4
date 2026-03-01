@@ -57,7 +57,7 @@ void TDF(score){
 void FGF(score){
     int output = score/3;
     printf("%d 3pt FG, ", output);
-    scoreCheck(output);
+    ScoreCheck(output);
 }
 
 void SafetyF(score){
