@@ -65,6 +65,7 @@ void ScoreCheck(int score){
 }
 
 void main(){
+    int score = 2;
     while (score > 1){
         printf("Enter 0 or 1 to STOP\n");
         printf("Enter the NFL score: ");
