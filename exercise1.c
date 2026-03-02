@@ -6,65 +6,48 @@ Description: Takes in two football scores and outputs all possible scoring combi
 */
 
 #include <stdio.h>
+int play[5] = {2, 3, 6, 7, 8};
+int score;
+int TD2 = 0;
+int TD1 = 0;
+int TD = 0;
+int FG = 0;
+int S = 0;
 
-
-void TD2ptF(int score){
-    int output = score/8;
-    printf("%d TD + 2pt, ", output);
-}
-
-void TD1ptF(int score){
-    int output = score/7;
-    printf("%d TD + 1pt, ", output);
-}
-
-void TDF(int score){
-    int output = score/6;
-    printf("%d TD, ", output);
-}
-
-void FGF(int score){
-    int output = score/3;
-    printf("%d 3pt FG, ", output);
-}
-
-void SafetyF(int score){
-    int output = score/2;
-    printf("%d Safety", output); 
-}
-
-void ScoreCheck(int score){
-    if (score > 1) {
-        if (score % 8 == 0){
-           TD2ptF(score);
-           ScoreCheck(score-8); 
-        }
-        if (score % 7 == 0){
-            TD1ptF(score);
-            ScoreCheck(score - 7);
-        }
-        if (score % 6 == 0 ){
-            TDF(score);
-            ScoreCheck(score - 6);
-        }
-        if (score % 3 == 0){
-            FGF(score);
-            ScoreCheck(score - 3);
-        }
-        if (score % 2 == 0){
-            SafetyF(score);
-            ScoreCheck(score - 2);
+void ScoreCheck(int score) {
+    if (score == 0){
+        printf("%d TD + 2pts, %d TD + FG, %d TD, %d FG, %d Safetys \n", TD2, TD1, TD, FG, S);
+        return;
+    }
+    else
+    {
+        for (int i=0; i > 5; i++){
+            if (i == 0){
+                S +=1;
+            }
+            if (i == 1){
+                FG += 1;
+            }
+            if (i == 2){
+                TD += 1;
+            }
+            if (i == 3){
+                TD1 += 1;
+            }
+            if (i == 4){
+                TD2 += 1;
+            }
+            ScoreCheck(score - play[i]);
         }
     }
-    printf("\n");
 }
 
 void main(){
-    int score = 2;
-    while (score > 1){
+    score = 2;
+    while (score >= 2){
         printf("Enter 0 or 1 to STOP\n");
         printf("Enter the NFL score: ");
         scanf("%d", &score);
-        ScoreCheck(score);
+        if (score > 1){ScoreCheck(score);}
     }
 }
